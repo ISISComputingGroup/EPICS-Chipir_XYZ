@@ -5,6 +5,9 @@
 
 < envPaths
 
+epicsEnvSet "IOCNAME" "$(P=$(MYPVPREFIX))CHIPIR_XYZ"
+epicsEnvSet "IOCSTATS_DB" "$(DEVIOCSTATS)/db/iocAdminSoft.db"
+
 cd ${TOP}
 
 ## Register all support components
@@ -24,7 +27,9 @@ Chipir_XYZ_registerRecordDeviceDriver pdbbase
 #lvDCOMConfigure("frontpanel", "frontpanel", "$(TOP)/Chipir_XYZApp/protocol/Chipir_XYZ.xml", "ndxchipir", 6, "", "spudulike", "reliablebeam")
 lvDCOMConfigure("frontpanel", "frontpanel", "$(TOP)/Chipir_XYZApp/protocol/Chipir_XYZ.xml", "", 6)
 
-dbLoadRecords("$(TOP)/db/Chipir_XYZ.db","P=CHIPIR_XYZ:")
+dbLoadRecords("$(TOP)/db/Chipir_XYZ.db","P=$(IOCNAME):")
+dbLoadRecords("$(IOCSTATS_DB)","IOC=$(IOCNAME)")
+
 #asynSetTraceMask("frontpanel",0,0xff)
 asynSetTraceIOMask("ex1",0,0x2)
 
