@@ -17,10 +17,10 @@ Chipir_XYZ_DBD += base.dbd
 Chipir_XYZ_DBD += lvDCOM.dbd
 
 # Include dbd files from all support applications:
-#Chipir_XYZ_DBD += xxx.dbd
+Chipir_XYZ_DBD += devIocStats.dbd
 
 # Add all the support libraries needed by this IOC
-#Chipir_XYZ_LIBS += xxx
+Chipir_XYZ_LIBS += devIocStats
 
 # Chipir_XYZ_registerRecordDeviceDriver.cpp derives from Chipir_XYZ.dbd
 Chipir_XYZ_SRCS += Chipir_XYZ_registerRecordDeviceDriver.cpp
