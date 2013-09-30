@@ -32,7 +32,7 @@ Chipir_XYZ_SRCS_vxWorks += -nil-
 # Add support from base/src/vxWorks if needed
 #Chipir_XYZ_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
-Chipir_XYZ_LIBS +=  lvDCOMSupport asyn autosave
+Chipir_XYZ_LIBS +=  lvDCOM asyn autosave
 Chipir_XYZ_SYS_LIBS_WIN32 += msxml2
 
 # Finally link to the EPICS Base libraries
