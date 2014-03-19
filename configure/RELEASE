@@ -31,9 +31,20 @@ EPICS_BASE=C:/EPICS/base/3-14-12-2
 # other than EPICS_BASE:
 #RULES=/path/to/epics/support/module/rules/x-y
 
-ASYN=$(SUPPORT)/asyn/4-22
-AUTOSAVE=$(SUPPORT)/autosave/R5_0
-LVDCOM=$(ISISSUPPORT)/lvDCOM
+## ISIS standard modules ##
+ICPCONFIG=$(SUPPORT)/icpconfig
+PVDUMP=$(SUPPORT)/pvdump
 DEVIOCSTATS=$(SUPPORT)/devIocStats/3-1-11
-include $(TOP)/../../ISIS_CONFIG.$(EPICS_HOST_ARCH)
+AUTOSAVE=$(SUPPORT)/autosave/R5_0
+SNCSEQ=$(SUPPORT)/seq/2-1-11
+CAPUTLOG=$(SUPPORT)/caPutLog/3-3-3
+SQLITE=$(SUPPORT)/sqlite
+UTILITIES=$(SUPPORT)/utilities
+ZLIB=$(SUPPORT)/zlib/1-2-8
+LVDCOM=$(ISISSUPPORT)/lvDCOM
+ASYN=$(SUPPORT)/asyn/4-22
+ONCRPC=$(SUPPORT)/oncrpc/2
 
+## add other modules here ##
+
+include $(TOP)/../../ISIS_CONFIG.$(EPICS_HOST_ARCH)

@@ -1,46 +1,9 @@
 TOP=../..
+# This file should do very little - it's purpose is to set the APPNAME and then load build.mak
 
-include $(TOP)/configure/CONFIG
-#----------------------------------------
-#  ADD MACRO DEFINITIONS AFTER THIS LINE
-#=============================
+# this definition is used in build.mak
+APPNAME=Chipir_XYZ
 
-#=============================
-# Build the IOC application
-
-PROD_IOC = Chipir_XYZ
-# Chipir_XYZ.dbd will be created and installed
-DBD += Chipir_XYZ.dbd
-
-# Chipir_XYZ.dbd will be made up from these files:
-Chipir_XYZ_DBD += base.dbd
-Chipir_XYZ_DBD += lvDCOM.dbd
-
-# Include dbd files from all support applications:
-Chipir_XYZ_DBD += devIocStats.dbd
-
-# Add all the support libraries needed by this IOC
-Chipir_XYZ_LIBS += devIocStats
-
-# Chipir_XYZ_registerRecordDeviceDriver.cpp derives from Chipir_XYZ.dbd
-Chipir_XYZ_SRCS += Chipir_XYZ_registerRecordDeviceDriver.cpp
-
-# Build the main IOC entry point on workstation OSs.
-Chipir_XYZ_SRCS_DEFAULT += Chipir_XYZMain.cpp
-Chipir_XYZ_SRCS_vxWorks += -nil-
-
-# Add support from base/src/vxWorks if needed
-#Chipir_XYZ_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
-
-Chipir_XYZ_LIBS +=  lvDCOM asyn autosave
-Chipir_XYZ_SYS_LIBS_WIN32 += msxml2
-
-# Finally link to the EPICS Base libraries
-Chipir_XYZ_LIBS += $(EPICS_BASE_IOC_LIBS)
-
-#===========================
-
-include $(TOP)/configure/RULES
-#----------------------------------------
-#  ADD RULES AFTER THIS LINE
-
+# If we are ###-IOC-01 leave this as is, if we are ###-IOC-02 or higher change to ###-IOC-01 and delete build.mak from this directory
+# there should only be a single build.mak for all IOCs of a given family and it is located in the ###-IOC-01 directory
+include $(TOP)/Chipir_XYZApp/src/build.mak
