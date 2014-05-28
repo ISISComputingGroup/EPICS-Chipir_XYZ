@@ -23,7 +23,7 @@ Chipir_XYZ_registerRecordDeviceDriver pdbbase
 #dbLoadRecords("db/xxx.db","user=kvlb23Host")
 epicsEnvSet "IOCNAME" "$(P=$(MYPVPREFIX))CHIPIR_XYZ"
 #lvDCOMConfigure("frontpanel", "frontpanel", "$(TOP)/Chipir_XYZApp/protocol/Chipir_XYZ.xml", "ndxchipir", 6, "", "spudulike", "reliablebeam")
-lvDCOMConfigure("frontpanel", "frontpanel", "$(TOP)/Chipir_XYZApp/protocol/Chipir_XYZ.xml", "", 6, "", "")
+lvDCOMConfigure("frontpanel", "frontpanel", "$(TOP)/Chipir_XYZApp/protocol/Chipir_XYZ.xml", "$(LVDCOMHOST=localhost)", 6, "", "", "")
 dbLoadRecords("$(TOP)/db/Chipir_XYZ.db","P=$(IOCNAME):")
 
 ##ISIS## Stuff that needs to be done after all records are loaded but before iocInit is called 
