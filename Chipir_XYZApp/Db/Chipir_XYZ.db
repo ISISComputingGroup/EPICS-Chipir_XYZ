@@ -64,6 +64,7 @@ record(ai, "$(P)X")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:X")
     field(SDIS, "$(P)DISABLE")
+	field(EGU, "mm")
 }
 
 record(ao, "$(P)X:SP")
@@ -74,6 +75,7 @@ record(ao, "$(P)X:SP")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:X:SP")
     field(SDIS, "$(P)DISABLE")
+	field(EGU, "mm")
 }
 
 record(ai, "$(P)X:SP:RBV")
@@ -85,6 +87,7 @@ record(ai, "$(P)X:SP:RBV")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:X:SP:RBV")
     field(SDIS, "$(P)DISABLE")
+	field(EGU, "mm")
 }
 
 record(ai, "$(P)Y")
@@ -96,6 +99,7 @@ record(ai, "$(P)Y")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:Y")
     field(SDIS, "$(P)DISABLE")
+	field(EGU, "mm")
 }
 
 record(ao, "$(P)Y:SP")
@@ -106,6 +110,7 @@ record(ao, "$(P)Y:SP")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:Y:SP")
     field(SDIS, "$(P)DISABLE")
+	field(EGU, "mm")
 }
 
 record(ai, "$(P)Y:SP:RBV")
@@ -117,6 +122,7 @@ record(ai, "$(P)Y:SP:RBV")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:Y:SP:RBV")
     field(SDIS, "$(P)DISABLE")
+	field(EGU, "mm")
 }
 
 record(ai, "$(P)Z")
@@ -128,6 +134,7 @@ record(ai, "$(P)Z")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:Z")
     field(SDIS, "$(P)DISABLE")
+	field(EGU, "mm")
 }
 
 record(ao, "$(P)Z:SP")
@@ -138,6 +145,7 @@ record(ao, "$(P)Z:SP")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:Z:SP")
     field(SDIS, "$(P)DISABLE")
+	field(EGU, "mm")
 }
 
 record(ai, "$(P)Z:SP:RBV")
@@ -149,6 +157,7 @@ record(ai, "$(P)Z:SP:RBV")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:Z:SP:RBV")
     field(SDIS, "$(P)DISABLE")
+	field(EGU, "mm")
 }
 
 record(stringin, "$(P)NAME")
@@ -386,6 +395,7 @@ record(ai, "$(P)SIM:X")
 {
     field(SCAN, "Passive")
     field(DTYP, "Soft Channel")
+	field(EGU, "mm")
 }
 
 alias("$(P)SIM:X","$(P)SIM:X:SP")
@@ -396,6 +406,7 @@ record(ai, "$(P)SIM:Y")
 {
     field(SCAN, "Passive")
     field(DTYP, "Soft Channel")
+	field(EGU, "mm")
 }
 
 alias("$(P)SIM:Y","$(P)SIM:Y:SP")
@@ -426,6 +437,7 @@ record(ai, "$(P)SIM:Z")
 {
     field(SCAN, "Passive")
     field(DTYP, "Soft Channel")
+	field(EGU, "mm")
 }
 
 alias("$(P)SIM:Z","$(P)SIM:Z:SP")
